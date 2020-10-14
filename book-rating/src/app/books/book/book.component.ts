@@ -8,8 +8,6 @@ import { Book } from '../shared/book';
 })
 export class BookComponent implements OnInit {
 
-  url = 'https://example.org';
-
   @Input() book: Book;
 
   constructor() {}

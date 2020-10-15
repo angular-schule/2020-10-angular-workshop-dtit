@@ -14,7 +14,7 @@
     <p>{{ book.description }}</p>
 
     <div>
-      <strong>Preis: {{ book.price }}</strong>
+      <strong>Preis: {{ book.price | currency:'EUR' }}</strong>
     </div>
 
     <button class="btn btn-success mr-2" (click)="doRateUp()"> + </button>

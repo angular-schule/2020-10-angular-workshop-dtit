@@ -10,7 +10,7 @@ export class DashboardComponent implements OnInit {
 
   books: Book[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.books = [
@@ -29,6 +29,14 @@ export class DashboardComponent implements OnInit {
         price: 32.9
       }
     ];
+  }
+
+  doRateUp(book: Book): void {
+    console.log('UP', book);
+  }
+
+  doRateDown(book: Book): void {
+    console.log('DOWN', book);
   }
 
 }

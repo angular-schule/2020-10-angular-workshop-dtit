@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Book } from '../shared/book';
 
 import { BookComponent } from './book.component';
 
@@ -16,6 +17,16 @@ describe('BookComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookComponent);
     component = fixture.componentInstance;
+
+    component.book = {} as Book;
+    /*component.book = {
+      isbn: '',
+      title: '',
+      description: '',
+      rating: 3,
+      price: 4
+    }*/
+
     fixture.detectChanges();
   });
 

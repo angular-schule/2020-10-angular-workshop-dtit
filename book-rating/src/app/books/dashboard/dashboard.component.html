@@ -1,7 +1,13 @@
-<br-book
-  [book]="b"
-  *ngFor="let b of books"
-  (rateUp)="doRateUp($event)"
-  (rateDown)="doRateDown($event)"></br-book>
+<ng-container *ngIf="books; else loading">
+  <br-book
+    [book]="b"
+    *ngFor="let b of books"
+    (rateUp)="doRateUp($event)"
+    (rateDown)="doRateDown($event)"></br-book>
 
-<p>Anzahl Bücher: {{ books.length }}</p>
+  <p>Anzahl Bücher: {{ books.length }}</p>
+</ng-container>
+
+<ng-template #loading>
+  <div>Bücher werden geladen...</div>
+</ng-template>

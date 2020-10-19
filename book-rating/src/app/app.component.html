@@ -1,9 +1,9 @@
 <div class="container">
 
   <nav>
-    <a routerLink="/books">Dashboard</a> /
-    <a routerLink="/books/search">Suche</a> /
-    <a routerLink="/books/create">Buch erstellen</a>
+    <a routerLink="/books" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a> /
+    <a routerLink="/books/search" routerLinkActive="active">Suche</a> /
+    <a routerLink="/books/create" routerLinkActive="active">Buch erstellen</a>
   </nav>
 
   <h1>{{ title }}</h1>

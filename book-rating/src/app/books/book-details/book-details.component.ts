@@ -19,6 +19,7 @@ export class BookDetailsComponent implements OnInit {
     /*const isbn = this.route.snapshot.paramMap.get('isbn');
     console.log(isbn);*/
 
+    // TODO: Verschachtelte Subscriptions
     this.route.paramMap.subscribe(params => {
       const isbn = params.get('isbn');
       this.bs.getSingle(isbn).subscribe(b => this.book = b);

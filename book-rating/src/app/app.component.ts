@@ -17,7 +17,7 @@ export class AppComponent {
       filter(e => e % 2 === 0)
     );
 
-    vielfache3geradzahlig.subscribe(e => console.log(e));
+    // vielfache3geradzahlig.subscribe(e => console.log(e));
 
     // Observable erstellen
     /*const myObs$ = new Observable((o) => {

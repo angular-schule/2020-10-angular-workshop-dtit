@@ -19,18 +19,18 @@ export class AppComponent {
 
     vielfache3geradzahlig.subscribe(e => console.log(e));
 
-    /*function producer(o) {
-      o.next(1);
+    // Observable erstellen
+    /*const myObs$ = new Observable((o) => {
+      const foo = 5;
+
+      o.next(foo + foo);
       o.next(2);
 
       setTimeout(() => o.next(3), 2000);
       setTimeout(() => o.complete(), 3000);
-    }
+    });
 
-    producer({ next: () => {} });
-
-    const myObs$ = new Observable(producer);
-
+    // Observable nutzen
     const observer = {
       next: e => console.log(e),
       error: err => console.error('ERR', err),
@@ -38,8 +38,6 @@ export class AppComponent {
     };
 
     myObs$.subscribe(observer);
-
-
     /////////
 
     myObs$.subscribe({

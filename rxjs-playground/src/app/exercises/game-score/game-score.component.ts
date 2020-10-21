@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, ReplaySubject } from 'rxjs';
-import { scan, reduce } from 'rxjs/operators';
+import { Subject, ReplaySubject, of } from 'rxjs';
+import { scan, reduce, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'rxw-game-score',
@@ -18,7 +18,32 @@ export class GameScoreComponent implements OnInit {
 
     /******************************/
 
-    
+    this.score$.pipe(
+      scan((acc, item) => acc + item, 0)
+    ).subscribe(score => this.currentScore = score);
+
+    this.score$.pipe(
+      reduce((acc, item) => acc + item, 0)
+    ).subscribe(score => this.finalScore = score);
+
+    /******************************/
+    // NgRx / Redux
+    of(
+      { type: 'SETTITLE', payload: 'Angular' },
+      { type: 'SETYEAR', payload: '2016' },
+      { type: 'SETNAME', payload: 'Ferdinand' },
+      { type: 'SETYEAR', payload: '2020' },
+      { type: 'SETNAME', payload: 'Malcher' },
+    ).pipe(
+      scan((state, msg) => {
+        switch (msg.type) {
+          case 'SETTITLE': return { ...state, title: msg.payload };
+          case 'SETYEAR': return { ...state, year: msg.payload };
+          case 'SETNAME': return { ...state, name: msg.payload };
+        }
+      }, {})
+    ).subscribe(e => console.log(e))
+
 
     /******************************/
 

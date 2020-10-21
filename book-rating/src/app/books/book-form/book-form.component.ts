@@ -9,9 +9,9 @@ import { Book } from '../shared/book';
  * Submit-Button ✅
  * Submit-Btton deaktivieren ✅
  * Formular abschicken ✅
- * Buch erstellen
- * HTTP
- * Redirect zur Detailseite
+ * Buch erstellen ✅
+ * HTTP ✅
+ * Redirect zur Detailseite ✅
  */
 
 

@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
     this.bs.getAll().subscribe(results => {
       this.books = results;
     });
+
   }
 
   doRateUp(book: Book): void {

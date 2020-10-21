@@ -19,7 +19,7 @@ export class DragdropComponent implements OnInit {
 
     /******************************/
 
-    
+    // mouseMove$.subscribe(e => this.setTargetPosition(e));
 
     /******************************/
   }
